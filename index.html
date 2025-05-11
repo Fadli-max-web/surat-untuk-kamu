@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: rgb(54, 59, 59);
+        }
+
+        .calculator {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #000;
+            background-color: brown;
+        }
+
+        input {
+            width: 100%;
+            height: 40px;
+            text-align: right;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 23%;
+            height: 50px;
+            font-size: 1.2em;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <br>
+        <button onclick="clearDisplay()">c</button>
+        <button onclick="appendValeu('7')">7</button>
+        <button onclick="appendValeu('8')">8</button>
+        <button onclick="appendValeu('9')">9</button>
+        <br>
+        <button onclick="appendValeu('4')">4</button>
+        <button onclick="appendValeu('5')">5</button>
+        <button onclick="appendValeu('6')">6</button>
+        <button onclick="appendValeu('+')">+</button>
+        <br>
+        <button onclick="appendValeu('1')">1</button>
+        <button onclick="appendValeu('2')">2</button>
+        <button onclick="appendValeu('3')">3</button>
+        <button onclick="appendValeu('-')">-</button>
+        <br>
+        <button onclick="appendValeu('0')">0</button>
+        <button onclick="appendValeu('.')">.</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendValeu('*')">*</button>
+        <br>
+        <button onclick="appendValeu('/')">/</button>
+    </div>
+
+    <script>
+        function appendValeu(valeu) {
+            document.getElementById('display').valeu += valeu;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').valeu = '';
+        }
+
+        function calculateResult() {
+            try {
+                document.getElementById('dislpay').valeu = eval(document.getElementById('dislpay').valeu);
+            } catch {
+                document.getElementById('display').valeu = 'Error'; 
+            }
+        }
+    </script>
+</body>
+</html>
